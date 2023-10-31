@@ -43,6 +43,7 @@
 		B16143AB2AF0FEF200ABB917 /* SessionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AA2AF0FEF200ABB917 /* SessionExt.swift */; };
 		B16143AD2AF100D900ABB917 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AC2AF100D900ABB917 /* CustomError.swift */; };
 		B16143B02AF1039500ABB917 /* CustomAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AF2AF1039500ABB917 /* CustomAlertDialog.swift */; };
+		B16143B22AF1086E00ABB917 /* AuthAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143B12AF1086E00ABB917 /* AuthAuthenticator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		B16143AA2AF0FEF200ABB917 /* SessionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExt.swift; sourceTree = "<group>"; };
 		B16143AC2AF100D900ABB917 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		B16143AF2AF1039500ABB917 /* CustomAlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDialog.swift; sourceTree = "<group>"; };
+		B16143B12AF1086E00ABB917 /* AuthAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAuthenticator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +160,9 @@
 		B161436A2AF0E4BF00ABB917 /* network */ = {
 			isa = PBXGroup;
 			children = (
-				B16143962AF0F47D00ABB917 /* RestManager.swift */,
+				B16143B12AF1086E00ABB917 /* AuthAuthenticator.swift */,
 				B16143A82AF0FD3300ABB917 /* Endpoints.swift */,
+				B16143962AF0F47D00ABB917 /* RestManager.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */,
 				B16143A52AF0FCD700ABB917 /* ITunesResult.swift in Sources */,
 				B16143852AF0E97C00ABB917 /* Dsl.swift in Sources */,
+				B16143B22AF1086E00ABB917 /* AuthAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

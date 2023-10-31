@@ -14,7 +14,6 @@ class TestRestViewModel: BaseViewModel {
         state.handleAlbums(.processing)
         task { [weak self] in
             guard let self = self else { return }
-            try? await Task.sleep(nanoseconds: 1_000_000_000)
             let source = await getAlbumUseCase.invoke(ids: [3, 2])
             state.handleAlbums(source)
         }

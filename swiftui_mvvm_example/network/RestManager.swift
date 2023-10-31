@@ -10,7 +10,18 @@ class RestManager {
     init() {
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForResource = 10
-        session = Alamofire.Session(configuration: configuration)
+        
+        let credential = AuthAuthenticator.OAuthCredential(
+            accessToken: "",
+            refreshToken: ""
+        )
+        
+        let interceptor = AuthenticationInterceptor(
+            authenticator: AuthAuthenticator(),
+            credential: credential
+        )
+        
+        session = Alamofire.Session(configuration: configuration, interceptor: interceptor)
         
     #if DEBUG
         NetworkActivityLogger.shared.level = .debug
