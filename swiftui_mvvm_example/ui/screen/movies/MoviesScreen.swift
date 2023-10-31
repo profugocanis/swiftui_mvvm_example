@@ -3,10 +3,10 @@ import SwiftUI
 struct MoviesScreen: BaseScreen {
     
     @InjectViewModel private var viewModel: MoviesViewModel
-    @ObservedObject private var state: MoviesScreenState
+    @ObservedObject private var state = MoviesScreenState()
     
     init() {
-        state = viewModel.state
+        viewModel.state = state
     }
     
     var body: some View {
@@ -24,8 +24,17 @@ struct MoviesScreen: BaseScreen {
                 .padding()
             
             ScrollView {
-                ForEach(state.movies, id: \.imdbID) { movie in
-                    MovieItemView(movie: movie)
+                LazyVStack {
+                    ForEach(state.movies, id: \.imdbID) { movie in
+                        MovieItemView(movie: movie)
+                    }
+                    if !state.movies.isEmpty {
+                        ProgressView()
+                            .padding()
+                            .onAppear {
+                                viewModel.loadMore()
+                            }
+                    }
                 }
             }
         }

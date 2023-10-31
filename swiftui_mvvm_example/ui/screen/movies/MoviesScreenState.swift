@@ -2,6 +2,7 @@ import Foundation
 
 class MoviesScreenState: BaseState {
     
+    var page = 1
     @Published var search = ""
     @Published private(set) var isLoading = false
     @Published private(set) var movies = [MoviesSearchResponse.Movie]()
@@ -14,7 +15,11 @@ class MoviesScreenState: BaseState {
                 showError(error)
             }
             if let movies = response?.search {
-                self.movies = movies
+                if page == 1 {
+                    self.movies = movies
+                } else {
+                    self.movies.append(contentsOf: movies)
+                }
             }
             isLoading = false
         case .error(let error):

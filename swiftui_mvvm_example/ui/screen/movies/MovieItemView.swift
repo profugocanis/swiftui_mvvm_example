@@ -7,11 +7,26 @@ struct MovieItemView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(movie.title ?? "")")
+                if let poster = movie.poster, let url = URL(string: poster) {
+                    AsyncImage(
+                        url: url,
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                        },
+                        placeholder: {
+                            ProgressView()
+                                .frame(width: 100, height: 100)
+                        }
+                    )
+                }
+                VStack(alignment: .leading) {
+                    Text("\(movie.title ?? "") (\(movie.year ?? ""))")
+                }
                 Spacer()
             }
             Divider()
         }
-        .padding(.top, 8)
     }
 }

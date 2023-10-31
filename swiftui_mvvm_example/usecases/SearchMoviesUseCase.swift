@@ -8,12 +8,12 @@ class SearchMoviesUseCase: BaseUseCase {
         self.restManager = restManager
     }
     
-    func invoke(text: String) async -> Source<MoviesSearchResponse> {
+    func invoke(text: String, page: Int) async -> Source<MoviesSearchResponse> {
         await handle {
             return try await restManager.fetch(url: Endpoints.movies, parameters: [
                 "s": text,
                 "y": "",
-                "page": "1",
+                "page": "\(page)",
                 "apikey": BuildUtils.shared.moviesApiKey,
             ])
         }
