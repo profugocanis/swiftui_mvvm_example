@@ -12,18 +12,14 @@ class AuthAuthenticator: Authenticator {
     }
     
     func refresh(_ credential: OAuthCredential, for session: Session, completion: @escaping (Result<OAuthCredential, Error>) -> Void) {
-        
+        completion(.failure(CustomError("Unauthorized")))
     }
     
     func apply(_ credential: OAuthCredential, to urlRequest: inout URLRequest) {
-        
+        urlRequest.headers.add(.init(name: "apikey", value: BuildUtils.shared.moviesApiKey))
     }
     
     struct OAuthCredential: AuthenticationCredential {
-        
-        let accessToken: String
-        let refreshToken: String
-        
         var requiresRefresh: Bool{
             return false
         }

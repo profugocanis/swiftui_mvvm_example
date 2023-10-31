@@ -11,22 +11,17 @@ class RestManager {
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForResource = 10
         
-        let credential = AuthAuthenticator.OAuthCredential(
-            accessToken: "",
-            refreshToken: ""
-        )
-        
         let interceptor = AuthenticationInterceptor(
             authenticator: AuthAuthenticator(),
-            credential: credential
+            credential: AuthAuthenticator.OAuthCredential()
         )
         
         session = Alamofire.Session(configuration: configuration, interceptor: interceptor)
         
-    #if DEBUG
+        #if DEBUG
         NetworkActivityLogger.shared.level = .debug
         NetworkActivityLogger.shared.startLogging()
-    #endif
+        #endif
     }
     
     func fetch<T: Decodable>(url: String, method: HTTPMethod = .get, parameters: Parameters? = nil) async throws -> T {

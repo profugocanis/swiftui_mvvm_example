@@ -44,6 +44,13 @@
 		B16143AD2AF100D900ABB917 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AC2AF100D900ABB917 /* CustomError.swift */; };
 		B16143B02AF1039500ABB917 /* CustomAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AF2AF1039500ABB917 /* CustomAlertDialog.swift */; };
 		B16143B22AF1086E00ABB917 /* AuthAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143B12AF1086E00ABB917 /* AuthAuthenticator.swift */; };
+		B16143BE2AF15DDA00ABB917 /* MoviesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143BD2AF15DDA00ABB917 /* MoviesScreen.swift */; };
+		B16143C02AF15E7300ABB917 /* SearchMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143BF2AF15E7300ABB917 /* SearchMoviesUseCase.swift */; };
+		B16143C22AF15EAA00ABB917 /* MoviesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C12AF15EAA00ABB917 /* MoviesSearchResponse.swift */; };
+		B16143C42AF15FBD00ABB917 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C32AF15FBD00ABB917 /* MoviesViewModel.swift */; };
+		B16143C72AF161F000ABB917 /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C62AF161F000ABB917 /* BuildUtils.swift */; };
+		B16143C92AF1633900ABB917 /* MoviesScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C82AF1633900ABB917 /* MoviesScreenState.swift */; };
+		B16143CB2AF1656600ABB917 /* MovieItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143CA2AF1656600ABB917 /* MovieItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +90,14 @@
 		B16143AC2AF100D900ABB917 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		B16143AF2AF1039500ABB917 /* CustomAlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDialog.swift; sourceTree = "<group>"; };
 		B16143B12AF1086E00ABB917 /* AuthAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAuthenticator.swift; sourceTree = "<group>"; };
+		B16143BB2AF15CF500ABB917 /* swiftui-mvvm-example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "swiftui-mvvm-example-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B16143BD2AF15DDA00ABB917 /* MoviesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesScreen.swift; sourceTree = "<group>"; };
+		B16143BF2AF15E7300ABB917 /* SearchMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesUseCase.swift; sourceTree = "<group>"; };
+		B16143C12AF15EAA00ABB917 /* MoviesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSearchResponse.swift; sourceTree = "<group>"; };
+		B16143C32AF15FBD00ABB917 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		B16143C62AF161F000ABB917 /* BuildUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
+		B16143C82AF1633900ABB917 /* MoviesScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesScreenState.swift; sourceTree = "<group>"; };
+		B16143CA2AF1656600ABB917 /* MovieItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +133,14 @@
 		B16143502AF0E3E000ABB917 /* swiftui_mvvm_example */ = {
 			isa = PBXGroup;
 			children = (
+				B16143BB2AF15CF500ABB917 /* swiftui-mvvm-example-Info.plist */,
 				B161436B2AF0E4D000ABB917 /* core */,
 				B161438A2AF0EA5F00ABB917 /* di */,
 				B161436A2AF0E4BF00ABB917 /* network */,
 				B16143952AF0F44300ABB917 /* usecases */,
 				B16143A32AF0FCB700ABB917 /* models */,
 				B16143682AF0E47800ABB917 /* ui */,
+				B16143C52AF161DD00ABB917 /* utils */,
 				B16143692AF0E49B00ABB917 /* system */,
 				B16143572AF0E3E100ABB917 /* Preview Content */,
 			);
@@ -193,6 +210,7 @@
 		B16143752AF0E70D00ABB917 /* screen */ = {
 			isa = PBXGroup;
 			children = (
+				B16143BC2AF15DCC00ABB917 /* movies */,
 				B16143772AF0E71C00ABB917 /* testrest */,
 				B16143762AF0E71500ABB917 /* main */,
 			);
@@ -255,6 +273,7 @@
 			children = (
 				B16143A12AF0FC9C00ABB917 /* BaseUseCase.swift */,
 				B161439F2AF0FC8C00ABB917 /* GetAlbumUseCase.swift */,
+				B16143BF2AF15E7300ABB917 /* SearchMoviesUseCase.swift */,
 			);
 			path = usecases;
 			sourceTree = "<group>";
@@ -273,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				B16143A42AF0FCD700ABB917 /* ITunesResult.swift */,
+				B16143C12AF15EAA00ABB917 /* MoviesSearchResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -283,6 +303,25 @@
 				B16143AF2AF1039500ABB917 /* CustomAlertDialog.swift */,
 			);
 			path = dialog;
+			sourceTree = "<group>";
+		};
+		B16143BC2AF15DCC00ABB917 /* movies */ = {
+			isa = PBXGroup;
+			children = (
+				B16143BD2AF15DDA00ABB917 /* MoviesScreen.swift */,
+				B16143C82AF1633900ABB917 /* MoviesScreenState.swift */,
+				B16143C32AF15FBD00ABB917 /* MoviesViewModel.swift */,
+				B16143CA2AF1656600ABB917 /* MovieItemView.swift */,
+			);
+			path = movies;
+			sourceTree = "<group>";
+		};
+		B16143C52AF161DD00ABB917 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				B16143C62AF161F000ABB917 /* BuildUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,8 +403,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16143C02AF15E7300ABB917 /* SearchMoviesUseCase.swift in Sources */,
 				B16143742AF0E64D00ABB917 /* UIApplicationExt.swift in Sources */,
 				B16143972AF0F47D00ABB917 /* RestManager.swift in Sources */,
+				B16143BE2AF15DDA00ABB917 /* MoviesScreen.swift in Sources */,
 				B16143832AF0E91900ABB917 /* BaseViewModel.swift in Sources */,
 				B16143A22AF0FC9C00ABB917 /* BaseUseCase.swift in Sources */,
 				B161439A2AF0F4B500ABB917 /* NetworkActivityLogger.swift in Sources */,
@@ -387,14 +428,19 @@
 				B16143712AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift in Sources */,
 				B161436D2AF0E4E700ABB917 /* BaseHostingViewController.swift in Sources */,
 				B16143A72AF0FD1400ABB917 /* SequenceExt.swift in Sources */,
+				B16143C72AF161F000ABB917 /* BuildUtils.swift in Sources */,
 				B16143892AF0E9FB00ABB917 /* AppLoger.swift in Sources */,
 				B16143A02AF0FC8C00ABB917 /* GetAlbumUseCase.swift in Sources */,
+				B16143C92AF1633900ABB917 /* MoviesScreenState.swift in Sources */,
 				B161437B2AF0E74200ABB917 /* BaseScreen.swift in Sources */,
 				B16143872AF0E9A700ABB917 /* InjectViewModel.swift in Sources */,
 				B16143522AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift in Sources */,
 				B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */,
+				B16143C42AF15FBD00ABB917 /* MoviesViewModel.swift in Sources */,
 				B16143A52AF0FCD700ABB917 /* ITunesResult.swift in Sources */,
 				B16143852AF0E97C00ABB917 /* Dsl.swift in Sources */,
+				B16143CB2AF1656600ABB917 /* MovieItemView.swift in Sources */,
+				B16143C22AF15EAA00ABB917 /* MoviesSearchResponse.swift in Sources */,
 				B16143B22AF1086E00ABB917 /* AuthAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +578,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"swiftui_mvvm_example/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "swiftui-mvvm-example-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -560,6 +607,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"swiftui_mvvm_example/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "swiftui-mvvm-example-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
