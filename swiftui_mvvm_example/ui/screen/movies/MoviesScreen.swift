@@ -5,8 +5,14 @@ struct MoviesScreen: BaseScreen {
     @InjectViewModel private var viewModel: MoviesViewModel
     @ObservedObject private var state = MoviesScreenState()
     
-    init() {
+    func viewDidLoad() {
         viewModel.state = state
+        state.$search
+            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+            .sink {
+                viewModel.loadSearch($0)
+            }
+            .store(in: &viewModel.subscriptions)
     }
     
     var body: some View {

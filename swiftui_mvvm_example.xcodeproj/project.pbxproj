@@ -106,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B10BB19D2AF250D90097F8A2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B16143CA2AF1656600ABB917 /* MovieItemView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		B16143452AF0E3E000ABB917 = {
 			isa = PBXGroup;
 			children = (
@@ -288,10 +296,10 @@
 		B16143BC2AF15DCC00ABB917 /* movies */ = {
 			isa = PBXGroup;
 			children = (
+				B10BB19D2AF250D90097F8A2 /* views */,
 				B16143BD2AF15DDA00ABB917 /* MoviesScreen.swift */,
 				B16143C82AF1633900ABB917 /* MoviesScreenState.swift */,
 				B16143C32AF15FBD00ABB917 /* MoviesViewModel.swift */,
-				B16143CA2AF1656600ABB917 /* MovieItemView.swift */,
 			);
 			path = movies;
 			sourceTree = "<group>";

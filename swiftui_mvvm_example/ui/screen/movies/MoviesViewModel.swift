@@ -3,19 +3,7 @@ import Combine
 
 class MoviesViewModel: BaseViewModel {
     
-    var state: MoviesScreenState! {
-        didSet {
-            state.$search
-                .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
-                .sink(receiveValue: { [weak self] t in
-                    guard let self = self else { return }
-                    task {
-                        await self.loadSearch(t)
-                    }
-                })
-                .store(in: &subscriptions)
-        }
-    }
+    var state: MoviesScreenState!
     private let searchMoviesUseCase: SearchMoviesUseCase
     
     init(searchMoviesUseCase: SearchMoviesUseCase) {
@@ -23,7 +11,7 @@ class MoviesViewModel: BaseViewModel {
     }
     
     @MainActor
-    private func loadSearch(_ text: String) {
+    func loadSearch(_ text: String) {
         if text.count < 3 { return }
         state.page = 1
         state.handleMovies(.processing)
@@ -42,5 +30,10 @@ class MoviesViewModel: BaseViewModel {
             guard let self = self else { return }
             state.handleMovies(await searchMoviesUseCase.invoke(text: state.search, page: state.page))
         }
+    }
+    
+    override func onCanceled() {
+        super.onCanceled()
+        logget("onCanceled")
     }
 }

@@ -12,6 +12,11 @@ class BaseHostingViewController<Content>: UIHostingController<Content>, SupportV
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        (rootView as? (any BaseScreen))?.viewDidLoad()
+    }
+    
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if navigationController == nil {

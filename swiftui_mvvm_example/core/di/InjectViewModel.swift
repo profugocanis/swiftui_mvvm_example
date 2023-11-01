@@ -6,20 +6,22 @@ class InjectViewModel<T: BaseViewModel> {
     private var instance: T?
     
     var wrappedValue: T {
-        if instance == nil {
-            instance = appContainer.resolve(T.self)
-            Self.setupViewModel(instance)
+        get {
+            if instance == nil {
+                instance = appContainer.resolve(T.self)
+                Self.setupViewModel(instance)
+            }
+            if instance == nil {
+                fatalError("\(T.self) nil state")
+            }
+            return instance!
         }
-        if instance == nil {
-            fatalError("\(T.self) nil state")
-        }
-        return instance!
     }
 }
  
 extension InjectViewModel {
     
-    static func getViewModel<VM: BaseViewModel>(_ args: Any?) -> VM {
+    static func getViewModel<VM: BaseViewModel>() -> VM {
         let instance = appContainer.resolve(VM.self)
         setupViewModel(instance)
         return instance!

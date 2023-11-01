@@ -1,6 +1,12 @@
 import SwiftUI
 
-public protocol BaseScreen: View { }
+public protocol BaseScreen: View {
+    func viewDidLoad()
+}
+
+extension BaseScreen {
+    func viewDidLoad() {}
+}
 
 extension BaseScreen {
     
