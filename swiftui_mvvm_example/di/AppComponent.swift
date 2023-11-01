@@ -7,12 +7,12 @@ class AppComponent {
     private init() {}
     
     func setup() {
-        setupSingeltons()
+        setupSingletons()
         setupUseCases()
         setupViewModels()
     }
     
-    private func setupSingeltons() {
+    private func setupSingletons() {
         singelton { _ in RestManager() }
     }
     

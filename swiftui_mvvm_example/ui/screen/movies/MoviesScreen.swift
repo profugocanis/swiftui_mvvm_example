@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct MoviesScreen: BaseScreen {
-    
-    @InjectViewModel private var viewModel: MoviesViewModel
+
     @ObservedObject private var state = MoviesScreenState()
+    private var viewModel: MoviesViewModel { injectViewModel(state) }
     
     func viewDidLoad() {
-        viewModel.state = state
         state.$search
             .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
             .sink {
-                viewModel.loadSearch($0)
+                if $0.count < 3 { return }
+                viewModel.loadSearch()
             }
             .store(in: &viewModel.subscriptions)
     }
@@ -42,6 +42,9 @@ struct MoviesScreen: BaseScreen {
                             }
                     }
                 }
+            }
+            .refreshable {
+                viewModel.loadSearch()
             }
         }
     }

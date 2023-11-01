@@ -1,9 +1,9 @@
 import Foundation
-import Combine
 
-class MoviesViewModel: BaseViewModel {
+class MoviesViewModel: BaseViewModel, StateViewModelProtocol {
     
     var state: MoviesScreenState!
+    
     private let searchMoviesUseCase: SearchMoviesUseCase
     
     init(searchMoviesUseCase: SearchMoviesUseCase) {
@@ -11,20 +11,8 @@ class MoviesViewModel: BaseViewModel {
     }
     
     @MainActor
-    func loadSearch(_ text: String) {
-        if text.count < 3 { return }
+    func loadSearch() {
         state.page = 1
-        state.handleMovies(.processing)
-        task { [weak self] in
-            guard let self = self else { return }
-            state.handleMovies(await searchMoviesUseCase.invoke(text: text, page: state.page))
-        }
-    }
-    
-    @MainActor
-    func loadMore() {
-        if state.search.count < 3 { return }
-        state.page += 1
         state.handleMovies(.processing)
         task { [weak self] in
             guard let self = self else { return }
@@ -32,8 +20,13 @@ class MoviesViewModel: BaseViewModel {
         }
     }
     
-    override func onCanceled() {
-        super.onCanceled()
-        logget("onCanceled")
+    @MainActor
+    func loadMore() {
+        if state.search.count < 3 { return }
+        state.page += 1
+        task { [weak self] in
+            guard let self = self else { return }
+            state.handleMovies(await searchMoviesUseCase.invoke(text: state.search, page: state.page))
+        }
     }
 }
