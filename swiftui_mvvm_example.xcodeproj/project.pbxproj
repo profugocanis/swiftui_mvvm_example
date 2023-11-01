@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B16143522AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143512AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift */; };
+		B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB19A2AF245940097F8A2 /* Movie.swift */; };
+		B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */; };
 		B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143532AF0E3E000ABB917 /* FirstScreen.swift */; };
 		B16143562AF0E3E100ABB917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16143552AF0E3E100ABB917 /* Assets.xcassets */; };
 		B16143592AF0E3E100ABB917 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16143582AF0E3E100ABB917 /* Preview Assets.xcassets */; };
@@ -33,7 +34,6 @@
 		B161439C2AF0F4C500ABB917 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161439B2AF0F4C500ABB917 /* Source.swift */; };
 		B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161439D2AF0FA9100ABB917 /* DataExt.swift */; };
 		B16143A22AF0FC9C00ABB917 /* BaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143A12AF0FC9C00ABB917 /* BaseUseCase.swift */; };
-		B16143A52AF0FCD700ABB917 /* ITunesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143A42AF0FCD700ABB917 /* ITunesResult.swift */; };
 		B16143A72AF0FD1400ABB917 /* SequenceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143A62AF0FD1400ABB917 /* SequenceExt.swift */; };
 		B16143A92AF0FD3300ABB917 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143A82AF0FD3300ABB917 /* Endpoints.swift */; };
 		B16143AB2AF0FEF200ABB917 /* SessionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143AA2AF0FEF200ABB917 /* SessionExt.swift */; };
@@ -50,8 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10BB19A2AF245940097F8A2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B161434E2AF0E3E000ABB917 /* swiftui_mvvm_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui_mvvm_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B16143512AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_mvvm_exampleApp.swift; sourceTree = "<group>"; };
+		B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiMvvmExampleApp.swift; sourceTree = "<group>"; };
 		B16143532AF0E3E000ABB917 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		B16143552AF0E3E100ABB917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B16143582AF0E3E100ABB917 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		B161439B2AF0F4C500ABB917 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		B161439D2AF0FA9100ABB917 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		B16143A12AF0FC9C00ABB917 /* BaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCase.swift; sourceTree = "<group>"; };
-		B16143A42AF0FCD700ABB917 /* ITunesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesResult.swift; sourceTree = "<group>"; };
 		B16143A62AF0FD1400ABB917 /* SequenceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExt.swift; sourceTree = "<group>"; };
 		B16143A82AF0FD3300ABB917 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		B16143AA2AF0FEF200ABB917 /* SessionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExt.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		B16143692AF0E49B00ABB917 /* system */ = {
 			isa = PBXGroup;
 			children = (
-				B16143512AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift */,
+				B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */,
 				B161435A2AF0E3E100ABB917 /* swiftui_mvvm_example.entitlements */,
 			);
 			path = system;
@@ -271,8 +271,8 @@
 		B16143A32AF0FCB700ABB917 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				B16143A42AF0FCD700ABB917 /* ITunesResult.swift */,
 				B16143C12AF15EAA00ABB917 /* MoviesSearchResponse.swift */,
+				B10BB19A2AF245940097F8A2 /* Movie.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -314,6 +314,7 @@
 				B161434A2AF0E3E000ABB917 /* Sources */,
 				B161434B2AF0E3E000ABB917 /* Frameworks */,
 				B161434C2AF0E3E000ABB917 /* Resources */,
+				B10BB1962AF2410B0097F8A2 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -378,6 +379,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B10BB1962AF2410B0097F8A2 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B161434A2AF0E3E000ABB917 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -397,6 +420,7 @@
 				B16143A92AF0FD3300ABB917 /* Endpoints.swift in Sources */,
 				B16143902AF0EC0B00ABB917 /* InjectLazy.swift in Sources */,
 				B16143B02AF1039500ABB917 /* CustomAlertDialog.swift in Sources */,
+				B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */,
 				B16143AB2AF0FEF200ABB917 /* SessionExt.swift in Sources */,
 				B161438C2AF0EA6F00ABB917 /* AppComponent.swift in Sources */,
 				B161437F2AF0E8E900ABB917 /* SupportViewModelProtocol.swift in Sources */,
@@ -410,10 +434,9 @@
 				B16143C92AF1633900ABB917 /* MoviesScreenState.swift in Sources */,
 				B161437B2AF0E74200ABB917 /* BaseScreen.swift in Sources */,
 				B16143872AF0E9A700ABB917 /* InjectViewModel.swift in Sources */,
-				B16143522AF0E3E000ABB917 /* swiftui_mvvm_exampleApp.swift in Sources */,
+				B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */,
 				B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */,
 				B16143C42AF15FBD00ABB917 /* MoviesViewModel.swift in Sources */,
-				B16143A52AF0FCD700ABB917 /* ITunesResult.swift in Sources */,
 				B16143852AF0E97C00ABB917 /* Dsl.swift in Sources */,
 				B16143CB2AF1656600ABB917 /* MovieItemView.swift in Sources */,
 				B16143C22AF15EAA00ABB917 /* MoviesSearchResponse.swift in Sources */,

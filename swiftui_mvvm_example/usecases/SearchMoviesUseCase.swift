@@ -14,7 +14,7 @@ class SearchMoviesUseCase: BaseUseCase {
                 "s": text,
                 "y": "",
                 "page": "\(page)",
-                "apikey": BuildUtils.shared.moviesApiKey,
+                "apikey": BuildUtils.shared.moviesApiKey
             ])
         }
     }

@@ -20,7 +20,7 @@ class AuthAuthenticator: Authenticator {
     }
     
     struct OAuthCredential: AuthenticationCredential {
-        var requiresRefresh: Bool{
+        var requiresRefresh: Bool {
             return false
         }
     }

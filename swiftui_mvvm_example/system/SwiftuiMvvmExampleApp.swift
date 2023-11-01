@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct swiftui_mvvm_exampleApp: App {
+struct SwiftuiMvvmExampleApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
@@ -34,12 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-
-
-
-
-
-
 
 /*
  

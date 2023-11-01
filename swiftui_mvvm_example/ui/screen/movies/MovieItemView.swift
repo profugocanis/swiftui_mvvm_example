@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MovieItemView: View {
     
-    let movie: MoviesSearchResponse.Movie
+    let movie: Movie
    
     var body: some View {
         VStack {

@@ -21,14 +21,11 @@ class CustomNavigationController: UINavigationController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .darkGray
         appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: UIColor.white
         ]
         
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.tintColor = .white
-        
-//        navigationBar.isHidden = true
     }
 }
-

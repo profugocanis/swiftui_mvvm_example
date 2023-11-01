@@ -36,6 +36,6 @@ class RestManager {
             let obj = try JSONDecoder().decode(T.self, from: data)
             return obj
         }
-        throw NSError()
+        throw CustomError("Oops!")
     }
 }
