@@ -18,8 +18,6 @@ class MoviesViewModel: BaseViewModel {
     }
     private let searchMoviesUseCase: SearchMoviesUseCase
     
-    private var subscriptions = Set<AnyCancellable>()
-    
     init(searchMoviesUseCase: SearchMoviesUseCase) {
         self.searchMoviesUseCase = searchMoviesUseCase
     }
@@ -44,11 +42,5 @@ class MoviesViewModel: BaseViewModel {
             guard let self = self else { return }
             state.handleMovies(await searchMoviesUseCase.invoke(text: state.search, page: state.page))
         }
-    }
-    
-    override func onCanceled() {
-        super.onCanceled()
-        subscriptions.forEach { $0.cancel() }
-        subscriptions.removeAll()
     }
 }

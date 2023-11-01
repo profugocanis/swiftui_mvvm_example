@@ -26,7 +26,11 @@ struct MovieItemView: View {
                 }
                 Spacer()
             }
+            .padding(.horizontal, 8)
+            
             Divider()
+                .padding(.leading, 108)
         }
+        .padding(.top, 2)
     }
 }

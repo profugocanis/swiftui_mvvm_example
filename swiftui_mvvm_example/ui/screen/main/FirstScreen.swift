@@ -6,7 +6,7 @@ struct MainScreen: BaseScreen {
         VStack {
             
             Button {
-                MoviesScreen.open(viewController?.navigationController)
+                MoviesScreen.open(navigationController)
             } label: {
                 Text("Movies")
             }

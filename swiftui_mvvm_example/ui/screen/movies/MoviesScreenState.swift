@@ -3,7 +3,7 @@ import Foundation
 class MoviesScreenState: BaseState {
     
     var page = 1
-    @Published var search = ""
+    @Published var search = "One"
     @Published private(set) var isLoading = false
     @Published private(set) var movies = [MoviesSearchResponse.Movie]()
     

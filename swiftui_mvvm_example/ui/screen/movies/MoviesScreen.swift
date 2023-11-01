@@ -40,7 +40,7 @@ struct MoviesScreen: BaseScreen {
         }
     }
     
-    static func open(_ nv: UINavigationController?) {
+    static func open(_ nv: CustomNavigationController?) {
         let vc = BaseHostingViewController(rootView: MoviesScreen())
         vc.title = "Movies"
         nv?.pushViewController(vc, animated: true)

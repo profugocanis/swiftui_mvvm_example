@@ -4,8 +4,6 @@ public protocol BaseScreen: View { }
 
 extension BaseScreen {
     
-    var navigation: CustomNavigationController? { viewController?.navigationController as? CustomNavigationController }
-    
     var viewController: BaseHostingViewController<Self>? {
         guard let rootNavigationViewController = UIApplication.shared.rootNavigationViewController else { return nil }
         // finding in rootNavigationViewController
@@ -34,6 +32,8 @@ extension BaseScreen {
         
         return nil
     }
+    
+    var navigationController: CustomNavigationController? { viewController?.navigationController as? CustomNavigationController }
     
     private func findViewController(_ constollers: [UIViewController]?) -> BaseHostingViewController<Self>? {
         constollers?.first(where: { $0 is BaseHostingViewController<Self> }) as? BaseHostingViewController<Self>

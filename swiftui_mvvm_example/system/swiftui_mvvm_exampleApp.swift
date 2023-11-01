@@ -28,8 +28,6 @@ struct swiftui_mvvm_exampleApp: App {
 // MARK: AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppComponent.shared.setup()
         return true
