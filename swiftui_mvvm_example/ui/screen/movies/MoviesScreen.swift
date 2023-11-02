@@ -23,6 +23,11 @@ struct MoviesScreen: BaseScreen {
             )
     }
     
+    private let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+    
     private var content: some View {
         VStack(alignment: .leading) {
             TextField("Search", text: $state.search)
@@ -30,10 +35,12 @@ struct MoviesScreen: BaseScreen {
                 .padding()
             
             ScrollView {
-                LazyVStack {
+                LazyVGrid(columns: columns, spacing: 4) {
+//                LazyVStack {
                     ForEach(state.movies, id: \.imdbID) { movie in
                         MovieItemView(movie: movie)
                     }
+                    
                     if !state.movies.isEmpty {
                         ProgressView()
                             .padding()
@@ -42,6 +49,7 @@ struct MoviesScreen: BaseScreen {
                             }
                     }
                 }
+                .padding(.horizontal, 4)
             }
             .refreshable {
                 viewModel.loadSearch()

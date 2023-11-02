@@ -3,34 +3,39 @@ import SwiftUI
 struct MovieItemView: View {
     
     let movie: Movie
+    private let viewWidth = UIScreen.main.bounds.size.width / 2
    
     var body: some View {
-        VStack {
-            HStack {
-                if let poster = movie.poster, let url = URL(string: poster) {
-                    AsyncImage(
-                        url: url,
-                        content: { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                        },
-                        placeholder: {
-                            ProgressView()
-                                .frame(width: 100, height: 100)
-                        }
-                    )
-                }
-                VStack(alignment: .leading) {
-                    Text("\(movie.title ?? "") (\(movie.year ?? ""))")
-                }
-                Spacer()
+        ZStack {
+            if let poster = movie.poster, let url = URL(string: poster) {
+                AsyncImage(
+                    url: url,
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: viewWidth)
+                            .frame(maxWidth: .infinity)
+                            .clipped()
+                    },
+                    placeholder: {
+                        ProgressView()
+                            .frame(height: viewWidth)
+                            .frame(maxWidth: .infinity)
+                    }
+                )
+                .frame(maxWidth: .infinity)
             }
-            .padding(.horizontal, 8)
             
-            Divider()
-                .padding(.leading, 108)
+            VStack {
+                Spacer()
+                Text("\(movie.title ?? "") (\(movie.year ?? ""))")
+                    .font(.system(size: 14))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(4)
+                    .background(Color.black.opacity(0.6))
+            }
         }
-        .padding(.top, 2)
     }
 }
