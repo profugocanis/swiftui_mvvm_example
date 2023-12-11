@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MoviesScreen: BaseScreen {
-
+    
     @ObservedObject private var state = MoviesScreenState()
     private var viewModel: MoviesViewModel { injectViewModel(state) }
     
@@ -24,9 +24,9 @@ struct MoviesScreen: BaseScreen {
     }
     
     private let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     private var content: some View {
         VStack(alignment: .leading) {
@@ -36,7 +36,6 @@ struct MoviesScreen: BaseScreen {
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 4) {
-//                LazyVStack {
                     ForEach(state.movies, id: \.imdbID) { movie in
                         MovieItemView(movie: movie)
                     }
