@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB19A2AF245940097F8A2 /* Movie.swift */; };
-		B10BB19F2AF287CC0097F8A2 /* InjectViewModelBaseScreenExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB19E2AF287CC0097F8A2 /* InjectViewModelBaseScreenExt.swift */; };
 		B10BB1A12AF2886F0097F8A2 /* StateViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB1A02AF2886F0097F8A2 /* StateViewModelProtocol.swift */; };
 		B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */; };
 		B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143532AF0E3E000ABB917 /* FirstScreen.swift */; };
@@ -52,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		B10BB19A2AF245940097F8A2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		B10BB19E2AF287CC0097F8A2 /* InjectViewModelBaseScreenExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectViewModelBaseScreenExt.swift; sourceTree = "<group>"; };
 		B10BB1A02AF2886F0097F8A2 /* StateViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewModelProtocol.swift; sourceTree = "<group>"; };
 		B161434E2AF0E3E000ABB917 /* swiftui_mvvm_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui_mvvm_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiMvvmExampleApp.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 				B161437E2AF0E8E900ABB917 /* SupportViewModelProtocol.swift */,
 				B161438F2AF0EC0B00ABB917 /* InjectLazy.swift */,
 				B161438D2AF0EBD600ABB917 /* Inject.swift */,
-				B10BB19E2AF287CC0097F8A2 /* InjectViewModelBaseScreenExt.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				B16143C72AF161F000ABB917 /* BuildUtils.swift in Sources */,
 				B16143892AF0E9FB00ABB917 /* AppLoger.swift in Sources */,
 				B16143C92AF1633900ABB917 /* MoviesScreenState.swift in Sources */,
-				B10BB19F2AF287CC0097F8A2 /* InjectViewModelBaseScreenExt.swift in Sources */,
 				B161437B2AF0E74200ABB917 /* BaseScreen.swift in Sources */,
 				B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */,
 				B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */,
