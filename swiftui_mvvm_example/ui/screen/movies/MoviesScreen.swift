@@ -5,16 +5,6 @@ struct MoviesScreen: BaseScreen {
     @ObservedObject private var state = MoviesScreenState()
     private var viewModel: MoviesViewModel { injectViewModel(state) }
     
-    func viewDidLoad() {
-        state.$search
-            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
-            .sink {
-                if $0.count < 3 { return }
-                viewModel.loadSearch()
-            }
-            .store(in: &viewModel.subscriptions)
-    }
-    
     var body: some View {
         content
             .overlay(
@@ -60,5 +50,19 @@ struct MoviesScreen: BaseScreen {
         let vc = BaseHostingViewController(rootView: MoviesScreen())
         vc.title = "Movies"
         nv?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: lifecycle
+extension MoviesScreen {
+    
+    func viewDidLoad() {
+        state.$search
+            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+            .sink {
+                if $0.count < 3 { return }
+                viewModel.loadSearch()
+            }
+            .store(in: &viewModel.subscriptions)
     }
 }
