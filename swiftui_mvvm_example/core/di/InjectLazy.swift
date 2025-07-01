@@ -7,7 +7,7 @@ public class InjectLazy<T> {
     
     public var wrappedValue: T {
         if instance == nil {
-            instance = appContainer.resolve(T.self)
+            instance = swinjectContainer.resolve(T.self)
         }
         return instance!
     }

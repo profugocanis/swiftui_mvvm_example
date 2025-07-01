@@ -1,15 +1,20 @@
 import Foundation
 
-class AppComponent {
+class AppComponent: BaseAppComponent {
     
     static let shared = AppComponent()
     
-    private init() {}
+    private override init() {}
     
     func setup() {
+        setupViewStates()
         setupSingletons()
         setupUseCases()
         setupViewModels()
+    }
+    
+    private func setupViewStates() {
+        factory { _ in MoviesScreenState() }
     }
     
     private func setupSingletons() {
@@ -22,7 +27,10 @@ class AppComponent {
     
     private func setupViewModels() {
         factory {
-            MoviesViewModel(searchMoviesUseCase: $0.get()!)
+            MoviesViewModel(
+                state: $0.get()!,
+                searchMoviesUseCase: $0.get()!
+            )
         }
     }
 }

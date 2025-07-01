@@ -4,7 +4,7 @@ import Combine
 open class BaseViewModel: ObservableObject {
 
     private var tasks = [Task<(), Never>]()
-    var subscriptions = Set<AnyCancellable>()
+    var cancellables = Set<AnyCancellable>()
     
     func task(_ operation: @escaping () async -> Void) {
         let t = Task(priority: .high) {
@@ -16,7 +16,7 @@ open class BaseViewModel: ObservableObject {
     open func onCanceled() {
         tasks.forEach { $0.cancel() }
         tasks.removeAll()
-        subscriptions.forEach { $0.cancel() }
-        subscriptions.removeAll()
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
     }
 }

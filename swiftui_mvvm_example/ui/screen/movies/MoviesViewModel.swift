@@ -1,13 +1,22 @@
 import Foundation
+import Combine
 
-class MoviesViewModel: BaseViewModel, StateViewModelProtocol {
+class MoviesViewModel: BaseViewModel {
     
-    var state: MoviesScreenState!
-    
+    let state: MoviesScreenState
     private let searchMoviesUseCase: SearchMoviesUseCase
     
-    init(searchMoviesUseCase: SearchMoviesUseCase) {
+    init(
+        state: MoviesScreenState,
+        searchMoviesUseCase: SearchMoviesUseCase
+    ) {
+        self.state = state
         self.searchMoviesUseCase = searchMoviesUseCase
+    }
+  
+    override func onCanceled() {
+        super.onCanceled()
+        logget("onCanceled")
     }
     
     @MainActor

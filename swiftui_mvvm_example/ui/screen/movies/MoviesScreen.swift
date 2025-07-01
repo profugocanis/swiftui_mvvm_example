@@ -2,8 +2,13 @@ import SwiftUI
 
 struct MoviesScreen: BaseScreen {
     
-    @ObservedObject private var state = MoviesScreenState()
-    private var viewModel: MoviesViewModel { injectViewModel(state) }
+    @ObservedObject private var state: MoviesScreenState
+    private var viewModel: MoviesViewModel
+    
+    init(_ vc: ScreenViewController) {
+        self.viewModel = AppComponent.shared.injectViewModel(vc)
+        self._state = viewModel.state.observedObject()
+    }
     
     var body: some View {
         content
@@ -20,6 +25,10 @@ struct MoviesScreen: BaseScreen {
     
     private var content: some View {
         VStack(alignment: .leading) {
+            Text(state.search)
+                .font(.title)
+                .padding()
+            
             TextField("Search", text: $state.search)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -46,8 +55,17 @@ struct MoviesScreen: BaseScreen {
         }
     }
     
-    static func open(_ nv: CustomNavigationController?) {
-        let vc = BaseHostingViewController(rootView: MoviesScreen())
+    static func open(_ nv: UINavigationController?) {
+//        let vc = ScreenViewController { vc in
+//            let viewModel: MoviesViewModel = AppComponent.shared.injectViewModel(vc)
+//            return MoviesScreen(
+//                state: viewModel.state,
+//                viewModel: viewModel
+//            )
+//        }
+        let vc = ScreenViewController { vc in
+            MoviesScreen(vc)
+        }
         vc.title = "Movies"
         nv?.pushViewController(vc, animated: true)
     }
@@ -63,6 +81,6 @@ extension MoviesScreen {
                 if $0.count < 3 { return }
                 viewModel.loadSearch()
             }
-            .store(in: &viewModel.subscriptions)
+            .store(in: &viewModel.cancellables)
     }
 }

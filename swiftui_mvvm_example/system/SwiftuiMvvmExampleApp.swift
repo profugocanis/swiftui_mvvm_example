@@ -16,7 +16,9 @@ struct SwiftuiMvvmExampleApp: App {
     
     private func setupWindow() {
         let window = UIApplication.shared.window
-        let mainViewController = BaseHostingViewController(rootView: MainScreen())
+        let mainViewController = ScreenViewController { _ in
+            MainScreen()
+        }
         mainViewController.title = "swiftui_mvvm_example"
         let mainNavigationController = CustomNavigationController()
         mainNavigationController.viewControllers = [mainViewController]

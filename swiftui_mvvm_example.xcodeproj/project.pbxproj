@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB19A2AF245940097F8A2 /* Movie.swift */; };
-		B10BB1A12AF2886F0097F8A2 /* StateViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB1A02AF2886F0097F8A2 /* StateViewModelProtocol.swift */; };
+		B127BBC22E132E6000465209 /* InjectObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B127BBC12E132E5D00465209 /* InjectObservedObject.swift */; };
 		B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */; };
 		B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143532AF0E3E000ABB917 /* FirstScreen.swift */; };
 		B16143562AF0E3E100ABB917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16143552AF0E3E100ABB917 /* Assets.xcassets */; };
 		B16143592AF0E3E100ABB917 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16143582AF0E3E100ABB917 /* Preview Assets.xcassets */; };
 		B16143622AF0E45700ABB917 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B16143612AF0E45700ABB917 /* Alamofire */; };
-		B16143652AF0E46F00ABB917 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B16143642AF0E46F00ABB917 /* Swinject */; };
-		B16143672AF0E46F00ABB917 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = B16143662AF0E46F00ABB917 /* Swinject-Dynamic */; };
-		B161436D2AF0E4E700ABB917 /* BaseHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161436C2AF0E4E700ABB917 /* BaseHostingViewController.swift */; };
+		B161436D2AF0E4E700ABB917 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161436C2AF0E4E700ABB917 /* ScreenViewController.swift */; };
 		B161436F2AF0E5E600ABB917 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161436E2AF0E5E600ABB917 /* CustomNavigationController.swift */; };
 		B16143712AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143702AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift */; };
 		B16143742AF0E64D00ABB917 /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143732AF0E64D00ABB917 /* UIApplicationExt.swift */; };
 		B161437B2AF0E74200ABB917 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161437A2AF0E74200ABB917 /* BaseScreen.swift */; };
 		B161437F2AF0E8E900ABB917 /* SupportViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161437E2AF0E8E900ABB917 /* SupportViewModelProtocol.swift */; };
 		B16143832AF0E91900ABB917 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143822AF0E91900ABB917 /* BaseViewModel.swift */; };
-		B16143852AF0E97C00ABB917 /* Dsl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143842AF0E97C00ABB917 /* Dsl.swift */; };
+		B16143852AF0E97C00ABB917 /* BaseAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */; };
 		B16143892AF0E9FB00ABB917 /* AppLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143882AF0E9FB00ABB917 /* AppLoger.swift */; };
 		B161438C2AF0EA6F00ABB917 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161438B2AF0EA6F00ABB917 /* AppComponent.swift */; };
 		B161438E2AF0EBD600ABB917 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161438D2AF0EBD600ABB917 /* Inject.swift */; };
@@ -51,21 +49,21 @@
 
 /* Begin PBXFileReference section */
 		B10BB19A2AF245940097F8A2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		B10BB1A02AF2886F0097F8A2 /* StateViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewModelProtocol.swift; sourceTree = "<group>"; };
+		B127BBC12E132E5D00465209 /* InjectObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectObservedObject.swift; sourceTree = "<group>"; };
 		B161434E2AF0E3E000ABB917 /* swiftui_mvvm_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui_mvvm_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiMvvmExampleApp.swift; sourceTree = "<group>"; };
 		B16143532AF0E3E000ABB917 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		B16143552AF0E3E100ABB917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B16143582AF0E3E100ABB917 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B161435A2AF0E3E100ABB917 /* swiftui_mvvm_example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swiftui_mvvm_example.entitlements; sourceTree = "<group>"; };
-		B161436C2AF0E4E700ABB917 /* BaseHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHostingViewController.swift; sourceTree = "<group>"; };
+		B161436C2AF0E4E700ABB917 /* ScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
 		B161436E2AF0E5E600ABB917 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		B16143702AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationTransactionHelper.swift; sourceTree = "<group>"; };
 		B16143732AF0E64D00ABB917 /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
 		B161437A2AF0E74200ABB917 /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
 		B161437E2AF0E8E900ABB917 /* SupportViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModelProtocol.swift; sourceTree = "<group>"; };
 		B16143822AF0E91900ABB917 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		B16143842AF0E97C00ABB917 /* Dsl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dsl.swift; sourceTree = "<group>"; };
+		B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppComponent.swift; sourceTree = "<group>"; };
 		B16143882AF0E9FB00ABB917 /* AppLoger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoger.swift; sourceTree = "<group>"; };
 		B161438B2AF0EA6F00ABB917 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		B161438D2AF0EBD600ABB917 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
@@ -97,9 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B16143672AF0E46F00ABB917 /* Swinject-Dynamic in Frameworks */,
 				B16143622AF0E45700ABB917 /* Alamofire in Frameworks */,
-				B16143652AF0E46F00ABB917 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +223,8 @@
 		B16143802AF0E8F700ABB917 /* di */ = {
 			isa = PBXGroup;
 			children = (
-				B16143842AF0E97C00ABB917 /* Dsl.swift */,
+				B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */,
+				B127BBC12E132E5D00465209 /* InjectObservedObject.swift */,
 				B161437E2AF0E8E900ABB917 /* SupportViewModelProtocol.swift */,
 				B161438F2AF0EC0B00ABB917 /* InjectLazy.swift */,
 				B161438D2AF0EBD600ABB917 /* Inject.swift */,
@@ -241,10 +238,9 @@
 				B16143932AF0EDF800ABB917 /* BaseState.swift */,
 				B161437A2AF0E74200ABB917 /* BaseScreen.swift */,
 				B16143822AF0E91900ABB917 /* BaseViewModel.swift */,
-				B161436C2AF0E4E700ABB917 /* BaseHostingViewController.swift */,
+				B161436C2AF0E4E700ABB917 /* ScreenViewController.swift */,
 				B161436E2AF0E5E600ABB917 /* CustomNavigationController.swift */,
 				B16143702AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift */,
-				B10BB1A02AF2886F0097F8A2 /* StateViewModelProtocol.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -331,8 +327,6 @@
 			name = swiftui_mvvm_example;
 			packageProductDependencies = (
 				B16143612AF0E45700ABB917 /* Alamofire */,
-				B16143642AF0E46F00ABB917 /* Swinject */,
-				B16143662AF0E46F00ABB917 /* Swinject-Dynamic */,
 			);
 			productName = swiftui_mvvm_example;
 			productReference = B161434E2AF0E3E000ABB917 /* swiftui_mvvm_example.app */;
@@ -364,7 +358,6 @@
 			mainGroup = B16143452AF0E3E000ABB917;
 			packageReferences = (
 				B16143602AF0E45700ABB917 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				B16143632AF0E46F00ABB917 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = B161434F2AF0E3E000ABB917 /* Products */;
 			projectDirPath = "";
@@ -391,7 +384,7 @@
 		B10BB1962AF2410B0097F8A2 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -405,7 +398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -429,13 +422,14 @@
 				B16143902AF0EC0B00ABB917 /* InjectLazy.swift in Sources */,
 				B16143B02AF1039500ABB917 /* CustomAlertDialog.swift in Sources */,
 				B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */,
+				B127BBC22E132E6000465209 /* InjectObservedObject.swift in Sources */,
 				B16143AB2AF0FEF200ABB917 /* SessionExt.swift in Sources */,
 				B161438C2AF0EA6F00ABB917 /* AppComponent.swift in Sources */,
 				B161437F2AF0E8E900ABB917 /* SupportViewModelProtocol.swift in Sources */,
 				B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */,
 				B16143942AF0EDF800ABB917 /* BaseState.swift in Sources */,
 				B16143712AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift in Sources */,
-				B161436D2AF0E4E700ABB917 /* BaseHostingViewController.swift in Sources */,
+				B161436D2AF0E4E700ABB917 /* ScreenViewController.swift in Sources */,
 				B16143A72AF0FD1400ABB917 /* SequenceExt.swift in Sources */,
 				B16143C72AF161F000ABB917 /* BuildUtils.swift in Sources */,
 				B16143892AF0E9FB00ABB917 /* AppLoger.swift in Sources */,
@@ -444,9 +438,8 @@
 				B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */,
 				B161439E2AF0FA9100ABB917 /* DataExt.swift in Sources */,
 				B16143C42AF15FBD00ABB917 /* MoviesViewModel.swift in Sources */,
-				B16143852AF0E97C00ABB917 /* Dsl.swift in Sources */,
+				B16143852AF0E97C00ABB917 /* BaseAppComponent.swift in Sources */,
 				B16143CB2AF1656600ABB917 /* MovieItemView.swift in Sources */,
-				B10BB1A12AF2886F0097F8A2 /* StateViewModelProtocol.swift in Sources */,
 				B16143C22AF15EAA00ABB917 /* MoviesSearchResponse.swift in Sources */,
 				B16143B22AF1086E00ABB917 /* AuthAuthenticator.swift in Sources */,
 			);
@@ -669,14 +662,6 @@
 				version = 5.8.1;
 			};
 		};
-		B16143632AF0E46F00ABB917 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.8.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -684,16 +669,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B16143602AF0E45700ABB917 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		B16143642AF0E46F00ABB917 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B16143632AF0E46F00ABB917 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		B16143662AF0E46F00ABB917 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B16143632AF0E46F00ABB917 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
