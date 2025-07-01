@@ -46,10 +46,18 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>swiftui_mvvm_example.xcscheme_^#shared#^_</key>
+		<key>mvvm.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B161434D2AF0E3E000ABB917</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
