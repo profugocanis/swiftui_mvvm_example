@@ -367,7 +367,7 @@ extension MovieDetailScreen {
             LazyVGrid(columns: [
                 GridItem(.flexible(), spacing: 12),
                 GridItem(.flexible(), spacing: 12)
-            ], spacing: 16) {
+            ], alignment: .center, spacing: 16) {
                 if let released = movie.released {
                     detailCard(title: "Released", value: released, icon: "calendar")
                 }
