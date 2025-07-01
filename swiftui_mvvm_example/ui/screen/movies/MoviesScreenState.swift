@@ -12,7 +12,7 @@ class MoviesScreenState: BaseState {
         case .processing: isLoading = true
         case .success(let response):
             if let error = response?.error {
-                showError(error)
+                showErrorDialog(error)
             }
             if let movies = response?.search {
                 if page == 1 {
@@ -23,7 +23,7 @@ class MoviesScreenState: BaseState {
             }
             isLoading = false
         case .error(let error):
-            showError(error)
+            showErrorDialog(error)
             isLoading = false
         }
     }

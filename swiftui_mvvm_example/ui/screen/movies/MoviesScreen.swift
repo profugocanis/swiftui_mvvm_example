@@ -7,7 +7,7 @@ struct MoviesScreen: BaseScreen {
     
     init(_ vc: ScreenViewController) {
         self.viewModel = AppComponent.shared.injectViewModel(vc)
-        self._state = viewModel.state.observedObject()
+        self.state = viewModel.state
     }
     
     var body: some View {

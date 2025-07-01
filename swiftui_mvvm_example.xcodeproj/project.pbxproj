@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10BB19A2AF245940097F8A2 /* Movie.swift */; };
-		B127BBC22E132E6000465209 /* InjectObservedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B127BBC12E132E5D00465209 /* InjectObservedObject.swift */; };
 		B16143522AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */; };
 		B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143532AF0E3E000ABB917 /* FirstScreen.swift */; };
 		B16143562AF0E3E100ABB917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16143552AF0E3E100ABB917 /* Assets.xcassets */; };
@@ -24,8 +23,6 @@
 		B16143852AF0E97C00ABB917 /* BaseAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */; };
 		B16143892AF0E9FB00ABB917 /* AppLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143882AF0E9FB00ABB917 /* AppLoger.swift */; };
 		B161438C2AF0EA6F00ABB917 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161438B2AF0EA6F00ABB917 /* AppComponent.swift */; };
-		B161438E2AF0EBD600ABB917 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161438D2AF0EBD600ABB917 /* Inject.swift */; };
-		B16143902AF0EC0B00ABB917 /* InjectLazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161438F2AF0EC0B00ABB917 /* InjectLazy.swift */; };
 		B16143942AF0EDF800ABB917 /* BaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143932AF0EDF800ABB917 /* BaseState.swift */; };
 		B16143972AF0F47D00ABB917 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143962AF0F47D00ABB917 /* RestManager.swift */; };
 		B161439A2AF0F4B500ABB917 /* NetworkActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143992AF0F4B500ABB917 /* NetworkActivityLogger.swift */; };
@@ -45,11 +42,11 @@
 		B16143C72AF161F000ABB917 /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C62AF161F000ABB917 /* BuildUtils.swift */; };
 		B16143C92AF1633900ABB917 /* MoviesScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143C82AF1633900ABB917 /* MoviesScreenState.swift */; };
 		B16143CB2AF1656600ABB917 /* MovieItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16143CA2AF1656600ABB917 /* MovieItemView.swift */; };
+		B1F9B0E42E13F272007FD99E /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F9B0E32E13F270007FD99E /* Inject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B10BB19A2AF245940097F8A2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		B127BBC12E132E5D00465209 /* InjectObservedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectObservedObject.swift; sourceTree = "<group>"; };
 		B161434E2AF0E3E000ABB917 /* swiftui_mvvm_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui_mvvm_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16143512AF0E3E000ABB917 /* SwiftuiMvvmExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftuiMvvmExampleApp.swift; sourceTree = "<group>"; };
 		B16143532AF0E3E000ABB917 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
@@ -66,8 +63,6 @@
 		B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppComponent.swift; sourceTree = "<group>"; };
 		B16143882AF0E9FB00ABB917 /* AppLoger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoger.swift; sourceTree = "<group>"; };
 		B161438B2AF0EA6F00ABB917 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		B161438D2AF0EBD600ABB917 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
-		B161438F2AF0EC0B00ABB917 /* InjectLazy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectLazy.swift; sourceTree = "<group>"; };
 		B16143932AF0EDF800ABB917 /* BaseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseState.swift; sourceTree = "<group>"; };
 		B16143962AF0F47D00ABB917 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 		B16143992AF0F4B500ABB917 /* NetworkActivityLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityLogger.swift; sourceTree = "<group>"; };
@@ -88,6 +83,7 @@
 		B16143C62AF161F000ABB917 /* BuildUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
 		B16143C82AF1633900ABB917 /* MoviesScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesScreenState.swift; sourceTree = "<group>"; };
 		B16143CA2AF1656600ABB917 /* MovieItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemView.swift; sourceTree = "<group>"; };
+		B1F9B0E32E13F270007FD99E /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,10 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				B16143842AF0E97C00ABB917 /* BaseAppComponent.swift */,
-				B127BBC12E132E5D00465209 /* InjectObservedObject.swift */,
 				B161437E2AF0E8E900ABB917 /* SupportViewModelProtocol.swift */,
-				B161438F2AF0EC0B00ABB917 /* InjectLazy.swift */,
-				B161438D2AF0EBD600ABB917 /* Inject.swift */,
+				B1F9B0E32E13F270007FD99E /* Inject.swift */,
 			);
 			path = di;
 			sourceTree = "<group>";
@@ -417,16 +411,14 @@
 				B16143AD2AF100D900ABB917 /* CustomError.swift in Sources */,
 				B161439C2AF0F4C500ABB917 /* Source.swift in Sources */,
 				B161436F2AF0E5E600ABB917 /* CustomNavigationController.swift in Sources */,
-				B161438E2AF0EBD600ABB917 /* Inject.swift in Sources */,
 				B16143A92AF0FD3300ABB917 /* Endpoints.swift in Sources */,
-				B16143902AF0EC0B00ABB917 /* InjectLazy.swift in Sources */,
 				B16143B02AF1039500ABB917 /* CustomAlertDialog.swift in Sources */,
 				B10BB19B2AF245940097F8A2 /* Movie.swift in Sources */,
-				B127BBC22E132E6000465209 /* InjectObservedObject.swift in Sources */,
 				B16143AB2AF0FEF200ABB917 /* SessionExt.swift in Sources */,
 				B161438C2AF0EA6F00ABB917 /* AppComponent.swift in Sources */,
 				B161437F2AF0E8E900ABB917 /* SupportViewModelProtocol.swift in Sources */,
 				B16143542AF0E3E000ABB917 /* FirstScreen.swift in Sources */,
+				B1F9B0E42E13F272007FD99E /* Inject.swift in Sources */,
 				B16143942AF0EDF800ABB917 /* BaseState.swift in Sources */,
 				B16143712AF0E60800ABB917 /* CustomNavigationTransactionHelper.swift in Sources */,
 				B161436D2AF0E4E700ABB917 /* ScreenViewController.swift in Sources */,

@@ -3,11 +3,11 @@ import SwiftUICore
 
 open class BaseState: ObservableObject {
     
-    internal func showError(_ error: Error?) {
+    internal func showErrorDialog(_ error: Error?) {
         CustomAlertDialog.showInfo(error?.localizedDescription ?? "nil")
     }
     
-    internal func showError(_ error: String?) {
+    internal func showErrorDialog(_ error: String?) {
         CustomAlertDialog.showInfo(error ?? "nil")
     }
     
