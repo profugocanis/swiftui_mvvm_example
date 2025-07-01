@@ -18,7 +18,7 @@ class GetMovieDetailsUseCase: BaseUseCase {
                     "i": imdbID,
                     "apikey": BuildUtils.shared.moviesApiKey
                 ]
-            )
+            ) as MovieDetails
         }
     }
 }
