@@ -15,6 +15,7 @@ class AppComponent: BaseAppComponent {
     
     private func setupViewStates() {
         factory { _ in MoviesScreenState() }
+        factory { _ in MovieDetailState() }
     }
     
     private func setupSingletons() {
@@ -23,6 +24,7 @@ class AppComponent: BaseAppComponent {
     
     private func setupUseCases() {
         factory { SearchMoviesUseCase(restManager: $0.get()!) }
+        factory { GetMovieDetailsUseCase(restManager: $0.get()!) }
     }
     
     private func setupViewModels() {
@@ -30,6 +32,12 @@ class AppComponent: BaseAppComponent {
             MoviesViewModel(
                 state: $0.get()!,
                 searchMoviesUseCase: $0.get()!
+            )
+        }
+        factory {
+            MovieDetailViewModel(
+                state: $0.get()!,
+                getDetailUseCase: $0.get()!
             )
         }
     }

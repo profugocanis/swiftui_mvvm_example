@@ -4,6 +4,8 @@ struct MoviesScreen: BaseScreen {
     
     @ObservedObject private var state: MoviesScreenState
     private var viewModel: MoviesViewModel
+    @State private var animate = false
+    @Environment(\.viewController) var viewController
     
     private let columns = [
         GridItem(.flexible(), spacing: 8),
@@ -51,8 +53,10 @@ struct MoviesScreen: BaseScreen {
                     .opacity(state.isLoading ? 1 : 0)
                     .animation(.default, value: state.isLoading)
             }
+            .onAppear { animate = true }
+            .navigationTitle("Movies")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarHidden(true)
     }
     
     // MARK: open
@@ -63,7 +67,6 @@ struct MoviesScreen: BaseScreen {
         vc.title = "Movies"
         nv?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension MoviesScreen {
@@ -78,34 +81,22 @@ extension MoviesScreen {
             
             // Movies grid
             moviesGridView
-            //                .animation(.default, value: state.isLoading)
         }
     }
     
     private var headerView: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Discover")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                
-                Text("Find your favorite movies")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
+            Text("Find your favorite movies")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             
             Spacer()
-            
-            // Optional: Add profile or settings button here
-            Button(action: {}) {
-                Image(systemName: "person.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(.accentColor)
-            }
         }
         .padding(.horizontal, 20)
-        .padding(.top, 10)
+        .padding(.top, 20)
+        .opacity(animate ? 1 : 0)
+        .offset(y: animate ? 0 : -20)
+        .animation(.easeOut(duration: 0.6), value: animate)
     }
     
     private var searchSection: some View {
@@ -144,14 +135,22 @@ extension MoviesScreen {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 16)
+        .opacity(animate ? 1 : 0)
+        .offset(x: animate ? 0 : -50)
+        .animation(.easeOut(duration: 0.6).delay(0.2), value: animate)
     }
     
     private var moviesGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(state.movies, id: \.imdbID) { movie in
-                    MovieItemView(movie: movie)
-                        .transition(.scale.combined(with: .opacity))
+                    MovieItemView(
+                        movie: movie,
+                        onTap: {
+                            MovieDetailScreen.open(viewController?.navigationController, movie: movie)
+                        })
+                    .buttonStyle(PlainButtonStyle())
+                    .transition(.scale.combined(with: .opacity))
                 }
                 
                 // Load more indicator
@@ -186,6 +185,8 @@ extension MoviesScreen {
                 viewModel.loadSearch()
             }
         }
+        .opacity(animate ? 1 : 0)
+        .animation(.easeOut(duration: 0.6).delay(0.4), value: animate)
     }
 }
 

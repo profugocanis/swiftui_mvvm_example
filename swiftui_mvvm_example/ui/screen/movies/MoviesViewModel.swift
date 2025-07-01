@@ -14,11 +14,6 @@ class MoviesViewModel: BaseViewModel {
         self.searchMoviesUseCase = searchMoviesUseCase
     }
   
-    override func onCanceled() {
-        super.onCanceled()
-        logget("onCanceled")
-    }
-    
     @MainActor
     func loadSearch() {
         state.page = 1

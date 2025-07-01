@@ -11,6 +11,7 @@ class SearchMoviesUseCase: BaseUseCase {
     func invoke(text: String, page: Int) async -> Source<MoviesSearchResponse> {
         await handle {
             return try await restManager.fetch(url: Endpoints.movies, parameters: [
+                "plot": "full",
                 "s": text,
                 "y": "",
                 "page": "\(page)",

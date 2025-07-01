@@ -5,6 +5,7 @@ struct MovieItemView: View {
     let movie: Movie
     @State private var isPressed = false
     private let viewWidth = UIScreen.main.bounds.size.width / 2 - 20
+    let onTap: () -> Void
    
     var body: some View {
         VStack(spacing: 0) {
@@ -45,8 +46,7 @@ struct MovieItemView: View {
             let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
             impactFeedback.impactOccurred()
             
-            // Handle movie selection here
-            print("Selected movie: \(movie.title ?? "Unknown")")
+            onTap()
         }
         .simultaneousGesture(
             DragGesture(minimumDistance: 0)
