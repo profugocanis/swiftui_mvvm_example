@@ -25,10 +25,6 @@ struct MoviesScreen: BaseScreen {
     
     private var content: some View {
         VStack(alignment: .leading) {
-            Text(state.search)
-                .font(.title)
-                .padding()
-            
             TextField("Search", text: $state.search)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -56,13 +52,6 @@ struct MoviesScreen: BaseScreen {
     }
     
     static func open(_ nv: UINavigationController?) {
-//        let vc = ScreenViewController { vc in
-//            let viewModel: MoviesViewModel = AppComponent.shared.injectViewModel(vc)
-//            return MoviesScreen(
-//                state: viewModel.state,
-//                viewModel: viewModel
-//            )
-//        }
         let vc = ScreenViewController { vc in
             MoviesScreen(vc)
         }
