@@ -19,7 +19,7 @@ class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
         customNavigationTransactionHelper.setup(self)
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .darkGray
+        appearance.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
         appearance.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
