@@ -48,19 +48,19 @@ struct MovieItemView: View {
             
             onTap()
         }
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 0)
-                .onChanged { _ in
-                    withAnimation(.easeInOut(duration: 0.1)) {
-                        isPressed = true
-                    }
-                }
-                .onEnded { _ in
-                    withAnimation(.easeInOut(duration: 0.1)) {
-                        isPressed = false
-                    }
-                }
-        )
+//        .simultaneousGesture(
+//            DragGesture(minimumDistance: 0)
+//                .onChanged { _ in
+//                    withAnimation(.easeInOut(duration: 0.1)) {
+//                        isPressed = true
+//                    }
+//                }
+//                .onEnded { _ in
+//                    withAnimation(.easeInOut(duration: 0.1)) {
+//                        isPressed = false
+//                    }
+//                }
+//        )
     }
     
     private var posterView: some View {

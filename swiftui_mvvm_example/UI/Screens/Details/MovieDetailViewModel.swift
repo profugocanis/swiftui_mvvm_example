@@ -2,6 +2,7 @@ import Foundation
 import Combine
 
 class MovieDetailViewModel: BaseViewModel {
+    
     let state: MovieDetailState
     private let getDetailUseCase: GetMovieDetailsUseCase
 
@@ -12,13 +13,15 @@ class MovieDetailViewModel: BaseViewModel {
 
     @MainActor
     func loadDetail(imdbID: String) {
-        state.handleDetail(.processing)
-        task { [weak self] in
+        state.isLoading = true
+        launchSafely { error in
+            self.state.showErrorDialog(error)
+        } launch: { [weak self] in
             guard let self = self else { return }
-            let result = await self.getDetailUseCase.invoke(imdbID: imdbID)
-            await MainActor.run {
-                self.state.handleDetail(result)
-            }
+            let result = try await getDetailUseCase.invoke(imdbID: imdbID)
+            state.setMovieDetails(result)
+            state.isLoading = false
+            
         }
     }
 }

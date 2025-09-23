@@ -17,10 +17,17 @@ class MoviesViewModel: BaseViewModel {
     @MainActor
     func loadSearch() {
         state.page = 1
-        state.handleMovies(.processing)
-        task { [weak self] in
+        state.isLoading = true
+        launchSafely { [weak self] error in
             guard let self = self else { return }
-            state.handleMovies(await searchMoviesUseCase.invoke(text: state.search, page: state.page))
+            state.showErrorDialog(error)
+            state.isLoading = false
+        } launch: { [weak self] in
+            guard let self = self else { return }
+            let result = try await searchMoviesUseCase.invoke(text: state.search, page: state.page)
+            state.setMovies(result)
+            state.isLoading = false
+            
         }
     }
     
@@ -28,9 +35,12 @@ class MoviesViewModel: BaseViewModel {
     func loadMore() {
         if state.search.count < 3 { return }
         state.page += 1
-        task { [weak self] in
+        launchSafely { error in
+            self.state.showErrorDialog(error)
+        } launch: { [weak self] in
             guard let self = self else { return }
-            state.handleMovies(await searchMoviesUseCase.invoke(text: state.search, page: state.page))
+            let result = try await searchMoviesUseCase.invoke(text: state.search, page: state.page)
+            state.addMovies(result)
         }
     }
 }

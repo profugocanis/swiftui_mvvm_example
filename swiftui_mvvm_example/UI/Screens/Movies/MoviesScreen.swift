@@ -54,7 +54,6 @@ struct MoviesScreen: BaseScreen {
                     .animation(.default, value: state.isLoading)
             }
             .onAppear { animate = true }
-            .navigationTitle("Movies")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -140,6 +139,7 @@ extension MoviesScreen {
         .animation(.easeOut(duration: 0.6).delay(0.2), value: animate)
     }
     
+    // MARK: Movies Grid
     private var moviesGridView: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 16) {
@@ -149,8 +149,8 @@ extension MoviesScreen {
                         onTap: {
                             MovieDetailScreen.open(viewController?.navigationController, movie: movie)
                         })
-                    .buttonStyle(PlainButtonStyle())
-                    .transition(.scale.combined(with: .opacity))
+//                    .buttonStyle(PlainButtonStyle())
+//                    .transition(.scale.combined(with: .opacity))
                 }
                 
                 // Load more indicator
@@ -162,14 +162,14 @@ extension MoviesScreen {
                                 .scaleEffect(0.8)
                                 .padding()
                         } else {
-                            Text("Pull to load more")
+                            Text("Loading more...")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .padding()
                         }
                         Spacer()
                     }
-                    .gridCellColumns(2)
+                    .gridCellColumns(1)
                     .onAppear {
                         if !state.isLoading {
                             viewModel.loadMore()
