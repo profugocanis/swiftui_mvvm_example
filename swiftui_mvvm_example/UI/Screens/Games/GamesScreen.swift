@@ -32,30 +32,20 @@ struct GamesScreen: BaseScreen {
     )
 }
 
-@Observable
-class GamesState: BaseState {
-    
-    var games: [String] = []
-    var isLoading: Bool = false
-    
-    init(games: [String] = []) {
-        self.games = games
-    }
-}
-
-enum GamesScreenIntent {
-    case searchGames(text: String)
-}
-
+// MARK: Content
 private struct GamesContent: View {
     
-    let state: GamesState
-    let onIntent: (GamesScreenIntent) -> Void
+    @State var state: GamesState
+    let onIntent: (GamesState.Intent) -> Void
     
     var body: some View {
         VStack {
             Text("Games Screen")
                 .font(.subheadline)
+            
+            TextField("Search games...", text: $state.searchText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
             
             ScrollView {
                 ForEach(state.games, id: \.self) { game in
@@ -74,30 +64,6 @@ private struct GamesContent: View {
             if state.isLoading {
                 ProgressView("Loading...")
             }
-        }
-    }
-}
-
-@MainActor
-final class GamesViewModel: BaseViewModel {
-    
-    let state = GamesState()
-    
-    func onIntent(_ intent: GamesScreenIntent) {
-        switch intent {
-        case .searchGames(text: let text):
-            searchGames(text: text)
-        }
-    }
-    
-    private func searchGames(text: String) {
-        task { [weak self] in
-            guard let self else { return }
-            state.isLoading = true
-            try? await Task.sleep(for: .seconds(2))
-            state.games.append("Game 1")
-            state.games.append("Game 2")
-            state.isLoading = false
         }
     }
 }
