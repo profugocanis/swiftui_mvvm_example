@@ -51,4 +51,8 @@ open class BaseViewModel: ObservableObject {
         }
         return error
     }
+    
+    deinit {
+        onCanceled()
+    }
 }

@@ -1,9 +1,10 @@
 import Foundation
 
+@Observable
 class MovieDetailState: BaseState {
     
-    @Published var isLoading: Bool = false
-    @Published private(set) var movieDetails: MovieDetails?
+    var isLoading: Bool = false
+    private(set) var movieDetails: MovieDetails?
     
     func setMovieDetails(_ details: MovieDetails) {
         movieDetails = details

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MoviesScreen: BaseScreen {
     
-    @ObservedObject private var state: MoviesScreenState
+    @State private var state: MoviesScreenState
     private var viewModel: MoviesViewModel
     @State private var animate = false
     @Environment(\.viewController) var viewController
@@ -55,6 +55,19 @@ struct MoviesScreen: BaseScreen {
             }
             .onAppear { animate = true }
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .onChange(of: state.search) { _, newValue in
+            state.searchTask?.cancel()
+
+            guard newValue.count >= 3 else { return }
+
+            state.searchTask = Task {
+                try? await Task.sleep(for: .seconds(1))
+                guard !Task.isCancelled else { return }
+                await MainActor.run {
+                    viewModel.loadSearch()
+                }
+            }
         }
     }
     
@@ -194,12 +207,12 @@ extension MoviesScreen {
 extension MoviesScreen {
     
     func viewDidLoad() {
-        state.$search
-            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
-            .sink {
-                if $0.count < 3 { return }
-                viewModel.loadSearch()
-            }
-            .store(in: &viewModel.cancellables)
+//        $state.$search
+//            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+//            .sink {
+//                if $0.count < 3 { return }
+//                viewModel.loadSearch()
+//            }
+//            .store(in: &viewModel.cancellables)
     }
 }

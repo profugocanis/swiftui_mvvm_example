@@ -40,5 +40,8 @@ class AppComponent: BaseAppComponent {
                 getDetailUseCase: $0.get()!
             )
         }
+        factory { _ in
+            GamesViewModel()
+        }
     }
 }

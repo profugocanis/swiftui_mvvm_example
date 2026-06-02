@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MovieDetailScreen: BaseScreen {
     
-    @ObservedObject private var state: MovieDetailState
+    @State private var state: MovieDetailState
     private var viewModel: MovieDetailViewModel
     
     init(_ vc: ScreenViewController, movie: Movie) {

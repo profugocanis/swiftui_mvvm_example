@@ -13,11 +13,8 @@ class CustomNavigationController: UINavigationController {
     }
     override var preferredStatusBarStyle: UIStatusBarStyle { statusBarStyle }
     
-    private let customNavigationTransactionHelper = CustomNavigationTransactionHelper()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        customNavigationTransactionHelper.setup(self)
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
         appearance.titleTextAttributes = [

@@ -12,6 +12,12 @@ struct MainScreen: BaseScreen {
             } label: {
                 Text("Movies")
             }
+            
+            Button {
+                GamesScreen.open(viewController?.navigationController)
+            } label: {
+                Text("Games")
+            }
         }
         .padding()
     }

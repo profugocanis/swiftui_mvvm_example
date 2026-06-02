@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-open class BaseState: ObservableObject {
+open class BaseState {
     
     internal func showErrorDialog(_ error: Error?) {
         if let afError = error?.asAFError {
