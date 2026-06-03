@@ -16,17 +16,18 @@ final class GamesViewModel: BaseViewModel {
 extension GamesViewModel {
     
     private func searchGames(text: String) {
+        state.isLoading = true
         launchSafely(
-            onError: { error in
-                self.state.showErrorDialog(error)
-            },
             launch: { [weak self] in
                 guard let self else { return }
-                state.isLoading = true
                 try? await Task.sleep(for: .seconds(2))
                 state.games.append("Game 1")
                 state.games.append("Game 2")
                 state.isLoading = false
+            },
+            onError: { [weak self] error in
+                self?.state.showErrorDialog(error)
+                self?.state.isLoading = false
             }
         )
     }

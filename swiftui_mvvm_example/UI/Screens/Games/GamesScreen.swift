@@ -25,13 +25,6 @@ struct GamesScreen: BaseScreen {
     }
 }
 
-#Preview {
-    GamesContent(
-        state: .init(games: ["Game 1", "Game 2", "Game 3"]),
-        onIntent: { _ in }
-    )
-}
-
 // MARK: Content
 private struct GamesContent: View {
     
@@ -54,6 +47,7 @@ private struct GamesContent: View {
                         .background(Color.blue.opacity(0.2))
                         .cornerRadius(8)
                 }
+                .frame(maxWidth: .infinity)
             }
             
             Button("Search Games") {
@@ -66,4 +60,12 @@ private struct GamesContent: View {
             }
         }
     }
+}
+
+// MARK: Preview
+#Preview {
+    GamesContent(
+        state: .init(games: ["Game 1", "Game 2", "Game 3"]),
+        onIntent: { _ in }
+    )
 }

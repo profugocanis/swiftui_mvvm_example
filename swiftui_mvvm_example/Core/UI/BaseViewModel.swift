@@ -23,20 +23,26 @@ open class BaseViewModel: ObservableObject {
     
     @MainActor
     func launchSafely(
+        launch: @escaping () async throws -> Void,
         onError: @escaping (Error) -> Void,
-        launch: @escaping () async throws -> Void
     ) {
-        task { [weak self] in
-            guard let self else { return }
+        task {
             do {
                 try await launch()
             } catch {
-                onError(handleError(error))
+                onError(ErrorHandler.handleError(error))
             }
         }
     }
     
-    private func handleError(_ error: Error) -> Error {
+    deinit {
+        onCanceled()
+    }
+}
+
+open class ErrorHandler {
+    
+    static func handleError(_ error: Error) -> Error {
         if let afError = error as? AFError, let code = afError.responseCode {
             switch code {
             case 401:
@@ -50,9 +56,5 @@ open class BaseViewModel: ObservableObject {
             }
         }
         return error
-    }
-    
-    deinit {
-        onCanceled()
     }
 }

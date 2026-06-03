@@ -1,7 +1,7 @@
 import Foundation
 
 @Observable
-class GamesState: BaseState {
+final class GamesState: BaseState {
     
     enum Intent {
         case searchGames(text: String)

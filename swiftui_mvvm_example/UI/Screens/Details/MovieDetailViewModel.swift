@@ -14,14 +14,17 @@ class MovieDetailViewModel: BaseViewModel {
     @MainActor
     func loadDetail(imdbID: String) {
         state.isLoading = true
-        launchSafely { error in
-            self.state.showErrorDialog(error)
-        } launch: { [weak self] in
-            guard let self = self else { return }
-            let result = try await getDetailUseCase.invoke(imdbID: imdbID)
-            state.setMovieDetails(result)
-            state.isLoading = false
-            
-        }
+        launchSafely(
+            launch: { [weak self] in
+                guard let self = self else { return }
+                let result = try await getDetailUseCase.invoke(imdbID: imdbID)
+                state.setMovieDetails(result)
+                state.isLoading = false
+                
+            },
+            onError: { error in
+                self.state.showErrorDialog(error)
+            }
+        )
     }
 }
